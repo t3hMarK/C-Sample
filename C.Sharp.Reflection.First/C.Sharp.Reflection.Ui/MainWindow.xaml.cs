@@ -1,6 +1,7 @@
 ﻿using C.Sharp.Reflection.Search;
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Windows;
 
@@ -37,7 +38,7 @@ namespace C.Sharp.Reflection.Ui
             {
                 searchResult = GetSearchImplementor()?.Search(search_query_textbox.Text);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 searchResult = "something went wrong";
             }
@@ -46,12 +47,25 @@ namespace C.Sharp.Reflection.Ui
                 search_result_label.Content = searchResult;
             }
         }
-        
+
         #endregion
 
         #region Methods
 
-        private ISearch GetSearchImplementor() => Activator.CreateInstance(Assembly.LoadFrom(Path.Combine(AssemblyPath, AssemblyName))?.GetType(SearchImplementorName)) as ISearch;
+        private ISearch GetSearchImplementor() => GetSearchImplementor(Assembly.LoadFrom(Path.Combine(AssemblyPath, AssemblyName)));
+
+        private ISearch GetSearchImplementor(Assembly assembly)
+        {
+            ISearch instance = null;
+
+            foreach(Type type in assembly.GetTypes().Where(t => typeof(ISearch).IsAssignableFrom(t)))
+            {
+                instance = Activator.CreateInstance(type) as ISearch;
+                break;
+            }
+
+            return instance;
+        }
 
         #endregion
     }
