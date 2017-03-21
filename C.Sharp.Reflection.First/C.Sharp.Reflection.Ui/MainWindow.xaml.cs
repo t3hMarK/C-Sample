@@ -1,5 +1,6 @@
 ﻿using C.Sharp.Reflection.Search;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -12,11 +13,7 @@ namespace C.Sharp.Reflection.Ui
         #region Properties
 
         public string AssemblyPath { get; set; } = @"plugins/";
-
-        public string AssemblyName { get; set; } = "C.Sharp.Reflection.Search.Google.dll";
-
-        public string SearchImplementorName { get; set; } = "C.Sharp.Reflection.Search.Google.GoogleSearch";
-
+        
         #endregion
 
         #region Constructors
@@ -24,6 +21,7 @@ namespace C.Sharp.Reflection.Ui
         public MainWindow()
         {
             InitializeComponent();
+            FindSearchProvider();
         }
 
         #endregion
@@ -38,7 +36,7 @@ namespace C.Sharp.Reflection.Ui
             {
                 searchResult = GetSearchImplementor()?.Search(search_query_textbox.Text);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 searchResult = "something went wrong";
             }
@@ -52,12 +50,27 @@ namespace C.Sharp.Reflection.Ui
 
         #region Methods
 
-        private ISearch GetSearchImplementor() => GetSearchImplementor(Assembly.LoadFrom(Path.Combine(AssemblyPath, AssemblyName)));
+        private void FindSearchProvider()
+        {
+            //Get paths
+            string appPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            string pluginDirectoryPath = Path.Combine(appPath, AssemblyPath);
+
+            //Find .dll in plugins directory
+            IEnumerable<string> searchProviderList = Directory.GetFiles(pluginDirectoryPath, "*.dll").Select(p => Path.GetFileName(p));
+
+            //Populate combobox
+            search_query_provider_combobox.ItemsSource = searchProviderList;
+            search_query_provider_combobox.SelectedIndex = 0;
+        }
+
+        private ISearch GetSearchImplementor() => GetSearchImplementor(Assembly.LoadFrom(Path.Combine(AssemblyPath, search_query_provider_combobox.SelectedValue.ToString())));
 
         private ISearch GetSearchImplementor(Assembly assembly)
         {
             ISearch instance = null;
 
+            //Find instance implementing from ISearch
             foreach(Type type in assembly.GetTypes().Where(t => typeof(ISearch).IsAssignableFrom(t)))
             {
                 instance = Activator.CreateInstance(type) as ISearch;
