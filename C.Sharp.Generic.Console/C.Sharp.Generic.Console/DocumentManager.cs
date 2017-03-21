@@ -45,6 +45,18 @@ namespace C.Sharp.Generic.Console
         /// </summary>
         /// <returns></returns>
         public TDocument TakeDocument() => HasDocument ? _documentQueue.Dequeue() : default(TDocument);
+        
+        /// <summary>
+        /// Display every Document with title
+        /// </summary>
+        /// <param name="title"></param>
+        public void DisplayDocumentsWithTitle(string title)
+        {
+            foreach(string doc in _documentQueue.Where(d => d.Title == title).OrderBy(d => d.Title).Select(d => d.Title))
+            {
+                System.Console.WriteLine(doc);
+            }
+        }
 
         #endregion
     }
