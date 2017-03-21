@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:C.Sharp.Reflection.Ui"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+    <Grid x:Name="search_grid">
+        <TextBox x:Name="search_query_textbox" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="417"/>
+        <Button x:Name="search_query_button" Content="Search" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
+        <Label x:Name="search_result_label" Content="" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="272" Width="497"/>
+
     </Grid>
 </Window>
