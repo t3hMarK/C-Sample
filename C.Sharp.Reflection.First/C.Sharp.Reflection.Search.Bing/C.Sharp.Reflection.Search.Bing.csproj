@@ -38,6 +38,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\C.Sharp.Reflection.Search.Attributes\C.Sharp.Reflection.Search.Attributes.csproj">
+      <Project>{B5E31E8B-EABD-44D6-AEBE-A38BC32E16B6}</Project>
+      <Name>C.Sharp.Reflection.Search.Attributes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\C.Sharp.Reflection.Search\C.Sharp.Reflection.Search.csproj">
       <Project>{900E149A-951A-4B8A-8BB6-A2FB9F13E826}</Project>
       <Name>C.Sharp.Reflection.Search</Name>
