@@ -1,10 +1,12 @@
 ﻿using C.Sharp.Reflection.Search;
+using C.Sharp.Reflection.Search.Attributes;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace C.Sharp.Reflection.Ui
 {
@@ -58,9 +60,9 @@ namespace C.Sharp.Reflection.Ui
 
             //Find .dll in plugins directory
             IEnumerable<string> searchProviderList = Directory.GetFiles(pluginDirectoryPath, "*.dll").Select(p => Path.GetFileName(p));
-
+            
             //Populate combobox
-            search_query_provider_combobox.ItemsSource = searchProviderList;
+            search_query_provider_combobox.ItemsSource = searchProviderList.Select(spl => new ListBoxItem() { Content = Assembly.LoadFrom(Path.Combine(AssemblyPath, spl)).GetCustomAttribute<SearchProviderNameAttribute>().Name, Tag = spl });
             search_query_provider_combobox.SelectedIndex = 0;
         }
 
