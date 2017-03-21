@@ -95,6 +95,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\C.Sharp.Reflection.Search\C.Sharp.Reflection.Search.csproj">
+      <Project>{900E149A-951A-4B8A-8BB6-A2FB9F13E826}</Project>
+      <Name>C.Sharp.Reflection.Search</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
