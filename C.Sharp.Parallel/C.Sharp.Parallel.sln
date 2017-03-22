@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C.Sharp.Parallel", "C.Sharp.Parallel\C.Sharp.Parallel.csproj", "{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C.Sharp.Parallel.Tpl", "C.Sharp.Parallel.Tpl\C.Sharp.Parallel.Tpl.csproj", "{C6BB6581-8D36-41AF-A773-91B9CC36CD45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C.Sharp.Parallel.Pi", "C.Sharp.Parallel.Pi\C.Sharp.Parallel.Pi.csproj", "{351D13F1-6AEB-4106-AC0C-99DC6B6096FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BB6581-8D36-41AF-A773-91B9CC36CD45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BB6581-8D36-41AF-A773-91B9CC36CD45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BB6581-8D36-41AF-A773-91B9CC36CD45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BB6581-8D36-41AF-A773-91B9CC36CD45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351D13F1-6AEB-4106-AC0C-99DC6B6096FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351D13F1-6AEB-4106-AC0C-99DC6B6096FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351D13F1-6AEB-4106-AC0C-99DC6B6096FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351D13F1-6AEB-4106-AC0C-99DC6B6096FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
