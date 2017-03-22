@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F052A612-93CB-4B41-A338-8A6DD79D50D0}</ProjectGuid>
+    <ProjectGuid>{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>C.Sharp.Test</RootNamespace>
-    <AssemblyName>C.Sharp.Test</AssemblyName>
+    <RootNamespace>C.Sharp.Parallel</RootNamespace>
+    <AssemblyName>C.Sharp.Parallel</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

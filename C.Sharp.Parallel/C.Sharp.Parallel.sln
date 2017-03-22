@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C.Sharp.Test", "C.Sharp.Test\C.Sharp.Test.csproj", "{F052A612-93CB-4B41-A338-8A6DD79D50D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C.Sharp.Parallel", "C.Sharp.Parallel\C.Sharp.Parallel.csproj", "{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F052A612-93CB-4B41-A338-8A6DD79D50D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F052A612-93CB-4B41-A338-8A6DD79D50D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F052A612-93CB-4B41-A338-8A6DD79D50D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F052A612-93CB-4B41-A338-8A6DD79D50D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B7F12B-181E-406D-A7B1-4BCA810AA1E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
